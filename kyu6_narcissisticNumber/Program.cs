@@ -19,3 +19,60 @@
 
 // Error checking for text strings or other invalid inputs is not required, only 
 // valid positive non-zero integers will be passed into the function.
+
+
+
+// public class Kata
+// {
+//   public static bool Narcissistic(int value)
+//   {
+//     // Code me
+//   }
+// }
+
+int HowManyNumbers (int inputNumber)
+{
+    //int nurrastic = 0;
+    int numberOfDigits = 0;
+    while (inputNumber > 0)
+    {
+        inputNumber = inputNumber/10;
+        numberOfDigits++;
+    }
+    return numberOfDigits;
+}
+
+int Expon(int inputNumber, int numOfDigits)
+{
+    int nurr = 0;
+    int step = 0;
+    int ost = 0;
+    while(inputNumber > 0)
+    {
+        ost = inputNumber%10;
+        step = Convert.ToInt32(Math.Pow(ost, numOfDigits));
+        nurr = nurr + step;
+        inputNumber = inputNumber/10;
+    }
+    return nurr;
+}
+
+Console.Clear();
+Console.WriteLine("Введите число: ");
+int number = int.Parse(Console.ReadLine());
+//Console.WriteLine(number);
+
+int digits = HowManyNumbers(number);
+//Console.WriteLine(digits);
+
+int nurrastic = Expon (number, digits);
+Console.WriteLine(nurrastic);
+
+if (number == nurrastic)
+{
+    Console.WriteLine("Number is Nurrastic");
+}
+else Console.WriteLine("Number is not Nurrastic");
+
+
+
