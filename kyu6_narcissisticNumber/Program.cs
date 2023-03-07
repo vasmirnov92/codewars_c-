@@ -26,53 +26,71 @@
 // {
 //   public static bool Narcissistic(int value)
 //   {
-//     // Code me
+
+
+
+    // Code me
+    int HowManyNumbers (int inputNumber)
+    {
+        //int nurrastic = 0;
+        int numberOfDigits = 0;
+        while (inputNumber > 0)
+        {
+            inputNumber = inputNumber/10;
+            numberOfDigits++;
+        }
+        return numberOfDigits;
+    }
+
+    int Expon(int inputNumber, int numOfDigits)
+    {
+        int nurr = 0;// new int();
+        int step = 1;//new int();
+        int ost = new int();
+        while(inputNumber > 0)
+        {
+            ost = inputNumber%10;
+            //step = Convert.ToInt32(Math.Pow(ost, numOfDigits)); //don't now how to use it in code wars
+
+            for(int i=1; i<=numOfDigits; i++)
+            {
+                step = step*ost;
+            }
+            nurr = nurr + step;
+            inputNumber = inputNumber/10;
+            step = 1;
+        }
+        return nurr;
+    }
+
+    Console.Clear();
+    Console.WriteLine("Введите число: ");   //for local code
+    int value = int.Parse(Console.ReadLine());  //for local code
+   // Console.WriteLine(value);    //check input number
+
+    int digits = HowManyNumbers(value);
+    //Console.WriteLine(digits);    //check counting digits
+
+    int nurrastic = Expon (value, digits);
+    Console.WriteLine(nurrastic);   //check how it is counting
+
+    if (value == nurrastic)
+    {
+        //return true;
+        Console.WriteLine("Number is Nurrastic"); //for local code
+    }
+    else 
+    {
+        //return false;
+        Console.WriteLine("Number is not Nurrastic");    //for local code
+    }
+
+
+
 //   }
 // }
 
-int HowManyNumbers (int inputNumber)
-{
-    //int nurrastic = 0;
-    int numberOfDigits = 0;
-    while (inputNumber > 0)
-    {
-        inputNumber = inputNumber/10;
-        numberOfDigits++;
-    }
-    return numberOfDigits;
-}
 
-int Expon(int inputNumber, int numOfDigits)
-{
-    int nurr = 0;
-    int step = 0;
-    int ost = 0;
-    while(inputNumber > 0)
-    {
-        ost = inputNumber%10;
-        step = Convert.ToInt32(Math.Pow(ost, numOfDigits));
-        nurr = nurr + step;
-        inputNumber = inputNumber/10;
-    }
-    return nurr;
-}
-
-Console.Clear();
-Console.WriteLine("Введите число: ");
-int number = int.Parse(Console.ReadLine());
-//Console.WriteLine(number);
-
-int digits = HowManyNumbers(number);
-//Console.WriteLine(digits);
-
-int nurrastic = Expon (number, digits);
-Console.WriteLine(nurrastic);
-
-if (number == nurrastic)
-{
-    Console.WriteLine("Number is Nurrastic");
-}
-else Console.WriteLine("Number is not Nurrastic");
 
 
 
