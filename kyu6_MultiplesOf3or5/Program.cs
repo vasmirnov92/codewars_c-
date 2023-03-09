@@ -9,6 +9,14 @@
 
 // Courtesy of projecteuler.net (Problem 1)
 
+
+public static class Kata
+{
+  public static int Solution(int value)
+  {
+    // Magic Happens
+
+
         int CountMultiplies(int number)
         {
             int summMultiplies = new int();
@@ -22,10 +30,16 @@
             return summMultiplies;
         }
 
-        Console.Clear();    //for local check
-        Console.WriteLine("Insert number:");    //for local check
-        int value = int.Parse(Console.ReadLine());  //for local check
-        Console.WriteLine(value);   // check insert
+        //Console.Clear();    //for local check
+        //Console.WriteLine("Insert number:");    //for local check
+        //int value = int.Parse(Console.ReadLine());  //for local check
+        //Console.WriteLine(value);   // check insert
 
         int summ = CountMultiplies(value);
-        Console.WriteLine(summ);    //for local check
+        //Console.WriteLine(summ);    //for local check
+        return summ;
+
+
+
+  }
+}
